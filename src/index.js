@@ -8,3 +8,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <App />
   </React.StrictMode>
 );
+
+/*"https://vsC0dex.github.io/goit-react-hw-03-image-finder/"*/
