@@ -1,4 +1,5 @@
 import styles from './image-gallery.module.css';
+import PropTypes from 'prop-types';
 
 const ImageGallery = ({ items, showImage }) => {
   const image = items.map(({ id, webformatURL, tags, largeImageURL }) => (
@@ -14,11 +15,15 @@ const ImageGallery = ({ items, showImage }) => {
       />
     </li>
   ));
-  return <ul className={styles.ImageGallery}>{image}</ul>;
+  return items.length ? <ul className={styles.ImageGallery}>{image}</ul> : null;
 };
 
 export default ImageGallery;
 
 ImageGallery.defaultProps = {
   items: [],
+};
+
+ImageGallery.propTypes = {
+  items: PropTypes.arrayOf(),
 };

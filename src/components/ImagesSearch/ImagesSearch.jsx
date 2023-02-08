@@ -126,6 +126,8 @@ class ImagesSearch extends Component {
             </form>
           </header> */}
           </header>
+
+          <ImageGallery items={items} showImage={showImage} />
           {loading && (
             <Triangle
               height="180"
@@ -136,8 +138,7 @@ class ImagesSearch extends Component {
             />
           )}
           {error && <p>{error}</p>}
-          <ImageGallery items={items} showImage={showImage} />
-          {Boolean(items.length) && (
+          {Boolean(items.length) && !loading && (
             <button className={styles.Button} onClick={loadMore}>
               Load More
             </button>
